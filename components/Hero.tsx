@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             Matrículas Abertas 2026
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-school-blue leading-[1.1] mb-10 tracking-tight max-w-4xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-school-blue leading-[1.1] mb-10 tracking-tight max-w-4xl mx-auto">
             Inovação que forma cidadãos <br className="hidden md:block" />
             <span className="text-school-lightBlue">preparados para o amanhã</span>
           </h1>
