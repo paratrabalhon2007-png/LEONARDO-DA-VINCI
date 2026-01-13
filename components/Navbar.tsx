@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
               href={WHATSAPP_URL} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-school-blue text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-800 transition shadow-lg hover:shadow-xl"
+              className="bg-school-blue text-white px-6 py-2.5 rounded-full font-bold hover:opacity-90 transition shadow-lg hover:shadow-xl"
             >
               Matrículas Abertas
             </a>

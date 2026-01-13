@@ -11,19 +11,29 @@ const Gallery: React.FC = () => {
           <p className="text-slate-600 max-w-2xl mx-auto">Momentos especiais que constroem o futuro e as memórias das nossas crianças.</p>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {GALLERY_IMAGES.map((img, idx) => (
-            <div key={idx} className="break-inside-avoid group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition duration-500">
+            <div 
+              key={idx} 
+              className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition duration-500 aspect-[3/4]"
+            >
               <img 
                 src={img} 
                 alt={`Atividade Escolar ${idx + 1}`} 
-                className="w-full h-auto object-cover object-top group-hover:scale-105 transition duration-500"
+                className="w-full h-full object-cover object-top group-hover:scale-110 transition duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-school-blue/60 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
-                <span className="text-white font-bold text-sm">Leonardo Da Vinci</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-school-blue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <div>
+                  <span className="text-school-yellow font-bold text-xs uppercase tracking-widest block mb-1">Destaque</span>
+                  <span className="text-white font-bold text-lg">Leonardo Da Vinci</span>
+                </div>
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <p className="text-slate-500 italic">Arraste para o lado ou clique para ampliar (em breve)</p>
         </div>
       </div>
     </div>
