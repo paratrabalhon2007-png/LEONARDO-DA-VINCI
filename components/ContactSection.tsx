@@ -53,19 +53,27 @@ const ContactSection: React.FC = () => {
           </div>
 
           <div className="lg:w-1/2 relative">
-            <div className="h-[450px] w-full rounded-3xl overflow-hidden shadow-2xl relative">
-              {/* Mock Map Placeholder */}
-              <div className="absolute inset-0 bg-slate-200 flex flex-col items-center justify-center p-8 text-center">
-                <svg className="w-16 h-16 text-slate-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-                <h4 className="font-bold text-slate-600 text-xl mb-2">Heliópolis / BA</h4>
-                <p className="text-slate-500 mb-6">Estamos localizados no coração da cidade.</p>
-                <a 
-                  href="https://www.google.com/maps/search/?api=1&query=Rua+Ozano+Pereira,+n.+5,+Centro,+Heliópolis+BA" 
-                  target="_blank"
-                  className="bg-school-blue text-white px-8 py-3 rounded-full font-bold hover:bg-blue-800 transition"
-                >
-                  Abrir no Google Maps
-                </a>
+            <div className="h-[450px] w-full rounded-3xl overflow-hidden shadow-2xl relative group">
+              {/* Actual Map Image Background */}
+              <img 
+                src="https://i.imgur.com/hRlOtk6.png" 
+                alt="Fachada da Escola" 
+                className="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-school-blue/40 flex flex-col items-center justify-center p-8 text-center backdrop-blur-[2px]">
+                <div className="bg-white/90 p-8 rounded-3xl shadow-xl max-w-sm">
+                  <svg className="w-12 h-12 text-school-blue mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+                  <h4 className="font-bold text-school-blue text-2xl mb-2">Heliópolis / BA</h4>
+                  <p className="text-slate-600 mb-6 font-medium">Estamos localizados no coração da cidade.</p>
+                  <a 
+                    href="https://maps.app.goo.gl/qB61j2Z6Nkcpcdt46" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-school-blue text-white px-8 py-3.5 rounded-full font-bold hover:bg-blue-800 transition shadow-lg inline-block"
+                  >
+                    Abrir no Google Maps
+                  </a>
+                </div>
               </div>
             </div>
             {/* Decorative element */}
