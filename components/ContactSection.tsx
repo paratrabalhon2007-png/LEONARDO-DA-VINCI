@@ -46,7 +46,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-xl text-school-blue mb-1">WhatsApp</h4>
-                  <a href={WHATSAPP_URL} className="text-green-600 font-bold text-lg hover:underline">(75) 99709-8720</a>
+                  <span className="text-green-600 font-bold text-lg cursor-default select-all">(75) 99709-8720</span>
                 </div>
               </div>
             </div>

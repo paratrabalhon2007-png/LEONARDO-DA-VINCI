@@ -1,9 +1,10 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { GALLERY_IMAGES } from '../constants';
 
 const Gallery: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -12,6 +13,21 @@ const Gallery: React.FC = () => {
       scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
     }
   };
+
+  // Prevenir scroll do body quando o modal está aberto
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelectedImage(null);
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [selectedImage]);
 
   return (
     <div className="bg-slate-50 py-24">
@@ -51,7 +67,8 @@ const Gallery: React.FC = () => {
             {GALLERY_IMAGES.map((img, idx) => (
               <div 
                 key={idx} 
-                className="min-w-[85%] sm:min-w-0 snap-center group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition duration-500 aspect-[3/4]"
+                onClick={() => setSelectedImage(img)}
+                className="min-w-[85%] sm:min-w-0 snap-center group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition duration-500 aspect-[3/4] cursor-zoom-in"
               >
                 <img 
                   src={img} 
@@ -71,9 +88,33 @@ const Gallery: React.FC = () => {
         
         <div className="mt-12 text-center">
           <p className="text-slate-500 italic block sm:hidden">Arraste para o lado ou use as setas para ver mais</p>
-          <p className="text-slate-500 italic hidden sm:block">Clique para ampliar (em breve)</p>
+          <p className="text-slate-500 italic hidden sm:block">Clique nas imagens para ampliar</p>
         </div>
       </div>
+
+      {/* Modal de Ampliação */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 animate-in fade-in duration-300"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white hover:text-school-yellow transition-colors p-2"
+            onClick={() => setSelectedImage(null)}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+          <img 
+            src={selectedImage} 
+            alt="Imagem Ampliada" 
+            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
