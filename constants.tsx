@@ -20,19 +20,19 @@ export const EDUCATION_LEVELS = [
   {
     title: "Educação Infantil",
     description: "Turmas de 2 a 5 anos focadas no desenvolvimento lúdico e social.",
-    image: "https://i.imgur.com/hC4KuFp.png",
+    image: "https://i.imgur.com/544cs7C.png",
     whatsappUrl: "https://wa.me/5575997098720?text=Preciso%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Educa%C3%A7%C3%A3o%20Infantil%2C%20com%20turmas%20de%202%20a%205%20anos%20focadas%20no%20desenvolvimento%20l%C3%BAdico%20e%20social."
   },
   {
     title: "Ensino Fundamental I",
     description: "Do 1º ao 5º ano, consolidando a alfabetização e o raciocínio lógico.",
-    image: "https://i.imgur.com/rahtavj.png",
+    image: "https://i.imgur.com/yz0kxjR.png",
     whatsappUrl: "https://wa.me/5575997098720?text=Preciso%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Ensino%20Fundamental%20I%2C%20do%201%C2%BA%20ao%205%C2%BA%20ano%2C%20consolidando%20a%20alfabetiza%C3%A7%C3%A3o%20e%20o%20racioc%C3%ADnio%20l%C3%B3gico."
   },
   {
     title: "Ensino Fundamental II",
     description: "Do 6º ao 9º ano, preparando para os desafios do Ensino Médio.",
-    image: "https://i.imgur.com/zgiYzDa.png",
+    image: "https://i.imgur.com/bWYb8x1.png",
     whatsappUrl: "https://wa.me/5575997098720?text=Preciso%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Ensino%20Fundamental%20II%2C%20do%206%C2%BA%20ao%209%C2%BA%20ano%2C%20preparando%20para%20os%20desafios%20do%20Ensino%20M%C3%A9dio."
   }
 ];
